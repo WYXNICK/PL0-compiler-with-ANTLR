@@ -196,10 +196,8 @@ public class PL0VisitorImpl<T> extends PL0BaseVisitor<T> {
         }
         //获取term列表
         List<PL0Parser.TermContext> termList=ctx.term();
-
         //获取加法运算符列表
         List<PL0Parser.AddOperatorContext> oprList=ctx.addOperator();
-
         //若为纯数字或变量(无加减法运算)
         if(oprList.isEmpty()){
             if(!ctx.optionalSign().getText().equals("")){
@@ -248,7 +246,6 @@ public class PL0VisitorImpl<T> extends PL0BaseVisitor<T> {
                 }
             }
         }
-
         return (T) this.tempVar;
     }
 
@@ -265,12 +262,12 @@ public class PL0VisitorImpl<T> extends PL0BaseVisitor<T> {
             this.stopTraversal=true;
             return null;
        }
-        else if(ctx.ident()!=null&&!varMap.containsKey(ctx.ident().getText())){
+        else if(ctx.ident()!=null&&!varMap.containsKey(ctx.ident().getText())&&!constMap.containsKey(ctx.ident().getText())){
             // 输出错误提示到标准错误流，包含行号和字符位置信息
             Token errorToken = ctx.getStart();
             System.err.println("Error at line " + errorToken.getLine() + ", position " + errorToken.getCharPositionInLine() +
                     ": Using undefined variable: " + ctx.getText());
-            this.stopTraversal=true;
+            this.stopTraversal = true;
             return null;
         }
         return (T) ctx.getText();

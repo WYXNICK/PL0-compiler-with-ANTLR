@@ -17,7 +17,7 @@ public class PL0Compiler {
 
     public static void main(String[] args) throws Exception {
         // 读取 PL0 源代码文件
-        ANTLRInputStream input = new ANTLRFileStream("E:\\软件学院\\编译原理\\期末项目\\PL0-compiler\\src\\examples\\example1.txt");
+        ANTLRInputStream input = new ANTLRFileStream("E:\\软件学院\\编译原理\\期末项目\\PL0-compiler\\src\\examples\\example5.txt");
 
         // 创建词法分析器
         PL0Lexer lexer = new PL0Lexer(input);
