@@ -1,0 +1,9 @@
+PROGRAM add
+VAR X1xx,y;
+BEGIN
+X1XX:=1;
+y:=2;
+WHILE X1XX<5 DO X1XX:=X1XX+1;
+IF y>O THEN y:=y-1;
+y:=y+x1XX
+END
