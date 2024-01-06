@@ -371,6 +371,12 @@ public class PL0VisitorImpl<T> extends PL0BaseVisitor<T> {
         }
     }
 
+    public void printConstMap(){
+        for (Map.Entry<String, String> entry : constMap.entrySet()) {
+            System.out.println("Const: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+
 }
 
 

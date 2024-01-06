@@ -50,9 +50,10 @@ public class PL0Compiler {
         } catch (IOException e) {
             e.printStackTrace(); // 处理文件写入异常
         }
-//        ((PL0VisitorImpl<String>) visitor).printIntermediateCode();
-//        System.out.println("======The varMap is as follows======");
-//        ((PL0VisitorImpl<String>) visitor).printVarMap();
+        System.out.println("======The varMap is as follows======");
+        ((PL0VisitorImpl<String>) visitor).printVarMap();
+        System.out.println("======The constMap is as follows======");
+        ((PL0VisitorImpl<String>) visitor).printConstMap();
 
 
 
